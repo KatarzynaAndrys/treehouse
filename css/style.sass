@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500')
+@import grid
+$baseColor: #FFF
+$secondColor: #7CC576
+$thirdColor: #7D7D7F
+@mixin ul
+    list-style-type: none
+@mixin button
+    height: 55px
+    width: 185px
+    border: none
+    border-radius: 30px
+    color: $baseColor
+    background-color: $secondColor
+    text-transform: uppercase
+    cursor: pointer
+    &:hover
+        background-color: $baseColor
+        color: $secondColor
+@mixin title
+    margin-top: 15vh
+    justify-content: center
+    text-align: center
+        
+    h2
+        text-transform: uppercase
+        font-size: 2.4rem
+    p
+        margin: 15px
+        color: $thirdColor
+        font-size: 1.2rem
+
+@mixin article
+    h4
+        font-size: 1.2rem
+    
+    p
+        color: $thirdColor
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.row:before,
+.row:after 
+    content: ""
+    display: table
+
+.row:after
+    clear: both
+
+body
+    font-family: 'Montserrat', sans-serif
+
+header
+    background-color: $baseColor
+    height: 15vh
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+
+    img
+        max-width: 100%
+        height: auto
+    
+    nav
+        padding: 7vh 17vw
+    
+        i
+            visibility: hidden
+            color: $secondColor
+
+        ul
+            @include ul
+            float: right
+
+            li
+                display: inline-block
+                padding: 0 10px
+                font-size: 14px
+
+                a
+                    text-decoration: none
+                    color: $thirdColor
+                    text-transform: uppercase
+                    padding: 5px
+
+.title
+    margin-top: 15vh
+    background: 
+        image: url('../img/first_backgound.png')
+        size: cover
+    height: 85vh
+
+    .titleBackground
+        background-color: rgba(0, 0, 0, 0.7)
+        height: 100%
+        color: $baseColor
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        hgroup
+            text-align: center
+
+            h1
+                text-transform: uppercase
+                font-size: 3.5rem
+
+            p
+                margin: 5vh
+                font-size: 1.3rem
+
+            .portfolio-button
+                @include button
+
+.container 
+    margin: 0 10vw
+
+[class*="col-4"]
+    float: left
+    padding: 10px
+
+.proff-serv
+    height: 80vh
+
+    .heading
+        @include title
+
+    .col-4
+        margin-top: 60px
+        text-align: center
+
+        h4
+            margin: 30px 0
+            text-transform: uppercase
+            font-size: 1.2rem
+
+        p
+            color: $thirdColor
+            font-size: 0.8rem
+
+.just_relax
+    background-image: url('../img/just_relax.jpg')
+    height: 90vh
+
+    .container
+        margin-left: 40vw
+        color: $baseColor
+
+        span
+            color: $secondColor
+
+        h2
+            padding:
+                top: 100px
+                bottom: 50px
+            text-transform: uppercase
+            font-size: 2.2rem
+
+        ul
+            @include ul
+            
+            li
+                margin: 25px
+
+                .checkmark
+                    float: left
+                    margin-right: 20px
+
+        button
+            margin-top: 30px
+            @include button
+
+.latest
+    height: 90vh
+
+    .heading
+        @include title
+
+    .latest-body
+        @include article
+        padding-top: 10vh
+        img
+            float: right
+        .text-tablet
+            padding-left: 10vw
+            .main-topic
+                text-transform: uppercase
+
+            .list
+                @include ul
+                .elemlist
+                    padding: 30px
+                        left: 0
+                    img
+                        float: left
+                        padding-right: 30px
+
+                    article
+                        padding-top: 10px
+            
+            a
+                text-decoration: none
+                color: $secondColor
+                float: left
+                margin-top: 20px
+                text-transform: uppercase
+
+                img
+                    padding-left: 10px
+
+.yourproject
+    margin-top: 20vh
+    height: 40vh
+    background-color: $secondColor
+    text-align: center
+    justify-content: center
+
+    h2
+        padding-top: 10vh
+        text-transform: uppercase
+        font-size: 2.5rem
+        color: $baseColor
+
+    button
+        @include button
+        border: 2px solid #fff
+            radius: 20px
+        margin: 25px
+
+.companies
+    height: 10vh
+    margin: 0 10vw
+
+    img
+        float: left
+        margin: 40px 45px
+
+.about 
+    color: $baseColor
+    height: 50vh
+    background-color: #313234
+    float: left
+
+    .container
+        margin: 5vh auto
+        p 
+            text-align: center
+
+    .col-4 
+        h5 
+            text-align: center
+            text-transform: uppercase
+            font-size: 1.5rem
+            padding: 20px
+
+    .media 
+        font-size: 24px
+        float: left
+
+    .icon-btn 
+        cursor: pointer
+        width: 45px
+        height: 45px
+        color: $baseColor
+        margin: 5px 5px 5px 0
+        text-align: center
+        padding: 10px
+        &:hover 
+            transform: scale(1.10)
+
+    footer
+        text-align: center
